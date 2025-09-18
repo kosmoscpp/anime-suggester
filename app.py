@@ -146,7 +146,7 @@ with gr.Blocks() as app:
         # Tab 1: Genre
         with gr.Tab("🎭 Search by Genre"):
             genre_input = gr.Dropdown(choices=genres, label="Choose a Genre")
-            rating_input = gr.Slider(1, 10, value=7, step=0.5, label="Minimum Rating")
+            rating_input = gr.Slider(1, 10, value=7, step=0.1, label="Minimum Rating")
             genre_output = gr.HTML()
             gr.Button("Suggest").click(fn=fetch_anime, inputs=[genre_input, rating_input], outputs=genre_output)
 
